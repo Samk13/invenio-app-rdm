@@ -141,10 +141,8 @@ export class AddUserGroupAccessModal extends Component {
                     <b>{i18next.t("Notification message")}</b>
                   </p>
                   <RichEditor
-                    inputValue={() => message} // () =>  Avoid re-rendering
-                    onBlur={(event, editor) => {
-                      this.updateMessage(editor.getContent());
-                    }}
+                    inputValue={message ?? ""}
+                    onEditorChange={this.updateMessage}
                   />
                 </>
               )}
